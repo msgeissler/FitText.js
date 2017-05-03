@@ -8,7 +8,7 @@
 *
 * Date: Thu May 05 14:23:00 2011 -0600
 *
-* Ancud FitText 1.3
+* msgeissler FitText 1.3
 */
 (function( $ ){
 
@@ -34,6 +34,7 @@
       // Call once to set.
       resizer();
 
+      $this.destroyFitText();
       // Call on resize. Opera debounces their resize by default.
       $(window).on('resize.fittext.' + namespace + ' orientationchange.fittext.' + namespace, resizer);
 
