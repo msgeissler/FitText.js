@@ -14,12 +14,20 @@ Here is a simple FitText setup:
 
 Your text should now fluidly resize, by default: Font-size = 1/10th of the element's width.
 
+## Destroy fitText-listener
+If you want to destroy an already added fitText-listener:
+
+```javascript
+jQuery("#responsive_headline").fitText('NAMESPACE');
+jQuery("#responsive_headline").destroyFitText('NAMESPACE');
+```
+
 ## The Compressor
 If your text is resizing poorly, you'll want to turn tweak up/down "The Compressor". It works a little like a guitar amp. The default is `1`.
 
 ```javascript
-jQuery("#responsive_headline").fitText(1.2); // Turn the compressor up   (resizes more aggressively)
-jQuery("#responsive_headline").fitText(0.8); // Turn the compressor down (resizes less aggressively)
+jQuery("#responsive_headline").fitText('NAMESPACE', 1.2); // Turn the compressor up   (resizes more aggressively)
+jQuery("#responsive_headline").fitText('NAMESPACE', 0.8); // Turn the compressor down (resizes less aggressively)
 ```
 
 This will hopefully give you a level of "control" that might not be pixel perfect, but resizes smoothly & nicely.
@@ -28,7 +36,7 @@ This will hopefully give you a level of "control" that might not be pixel perfec
 FitText now allows you to specify two optional pixel values: `minFontSize` and `maxFontSize`. Great for situations when you want to preserve hierarchy.
 
 ```javascript
-jQuery("#responsive_headline").fitText(1.2, { minFontSize: '20px', maxFontSize: '40px' });
+jQuery("#responsive_headline").fitText('NAMESPACE', 1.2, { minFontSize: '20px', maxFontSize: '40px' });
 ```
 
 ## CSS FAQ
