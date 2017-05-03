@@ -7,11 +7,12 @@
 * http://sam.zoy.org/wtfpl/
 *
 * Date: Thu May 05 14:23:00 2011 -0600
+*
+* Ancud FitText 1.3
 */
-
 (function( $ ){
 
-  $.fn.fitText = function( kompressor, options ) {
+  $.fn.fitText = function( namespace, kompressor, options ) {
 
     // Setup options
     var compressor = kompressor || 1,
@@ -34,10 +35,14 @@
       resizer();
 
       // Call on resize. Opera debounces their resize by default.
-      $(window).on('resize.fittext orientationchange.fittext', resizer);
+      $(window).on('resize.fittext.' + namespace + ' orientationchange.fittext.' + namespace, resizer);
 
     });
 
   };
+  
+  $.fn.destroyFitText = function( namespace ) {
+      $(window).off('resize.fittext.' + namespace + ' orientationchange.fittext.' + namespace);
+  }
 
 })( jQuery );
