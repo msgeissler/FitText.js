@@ -33,8 +33,7 @@
 
       // Call once to set.
       resizer();
-
-      $this.destroyFitText();
+      
       // Call on resize. Opera debounces their resize by default.
       $(window).on('resize.fittext.' + namespace + ' orientationchange.fittext.' + namespace, resizer);
 
